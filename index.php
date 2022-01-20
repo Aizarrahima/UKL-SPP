@@ -16,12 +16,21 @@
 <html lang="en">
 
 <head>
+  <?php 
+  include "conn.php";
+  session_start();
+  if(!isset($_SESSION['level'])){
+      header('location: pages/sign-in.php');
+  }
+  $qry=mysqli_query($conn,"select * from petugas where username = '".$_SESSION['username']."'");
+  $dt_admin=mysqli_fetch_array($qry);
+  ?>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
-    Material Dashboard 2 by Creative Tim
+    Aplikasi Pembayaran SPP
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -49,7 +58,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="./pages/dashboard.html">
+          <a class="nav-link text-white active bg-gradient-primary" href="./pages/dashboard.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -57,7 +66,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/tables.html">
+          <a class="nav-link text-white " href="./pages/tables.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -65,7 +74,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/billing.html">
+          <a class="nav-link text-white " href="./pages/billing.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
@@ -73,7 +82,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/virtual-reality.html">
+          <a class="nav-link text-white " href="./pages/virtual-reality.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">view_in_ar</i>
             </div>
@@ -81,7 +90,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/rtl.html">
+          <a class="nav-link text-white " href="./pages/rtl.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
             </div>
@@ -89,7 +98,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/notifications.html">
+          <a class="nav-link text-white " href="./pages/notifications.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">notifications</i>
             </div>
@@ -100,7 +109,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/profile.html">
+          <a class="nav-link text-white " href="./pages/profile.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -108,19 +117,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-in.html">
+          <a class="nav-link text-white" href="./pages/sign-in.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">login</i>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Sign In</span></a>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-up.html">
+          <a class="nav-link text-white " href="./pages/logout.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
+              <i class="material-icons opacity-10">logout</i>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
       </ul>
@@ -151,7 +160,7 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <a href="./pages/sign-in.php" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
               </a>
@@ -248,6 +257,28 @@
       </div>
     </nav>
     <!-- End Navbar -->
+        <div class="col-lg-12 col-md-6 mt-4 mb-4">
+      <div class="card z-index-2 ">
+        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+          <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+            <div class="chart">
+              <h4 class="text-white ps-3 mb-0 ">Aplikasi Pembayaran SPP</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+            <div>
+              <h1 class="mb-0">Hello! <?= $_SESSION['username'] ?> Welcome to Aplikasi Pembayaran SPP</h1>
+            </div>
+            <div>
+              <h1 class="mb-0"><?=$dt_admin['nama_petugas']?></h1>
+              <p><?=$dt_admin['level']?></p>
+            </div>
+          <hr class="dark horizontal">
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
