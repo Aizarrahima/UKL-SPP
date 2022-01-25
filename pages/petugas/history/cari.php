@@ -55,8 +55,8 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
           <div class="container-fluid ps-2 pe-0">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.php">
-              Pembayaran SPP
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/petugas/dashboard-petugas.php">
+              Aplikasi Pembayaran SPP
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -68,13 +68,13 @@
             <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../dashboard-admin.php">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../dashboard-petugas.php">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                     Dashboard
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../siswa/siswa.php">
+                  <a class="nav-link me-2" href="../../admin/siswa/siswa.php">
                     <i class="fa fa-user opacity-6 text-dark me-1"></i>
                     Data Siswa
                   </a>
@@ -97,7 +97,7 @@
                   <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                     <div class="card card-plain">
                       <div class="card-header">
-                        <h4 class="font-weight-bolder">Transaksi</h4>
+                        <h4 class="font-weight-bolder">History</h4>
                         <p class="mb-0">Masukkan NISN yang akan dicari</p>
                       </div>
                       <?php 
@@ -105,13 +105,13 @@
                       ?>
 
                       <div class="card-body mb-8">
-                        <form action="add_transaksi_post.php" method="get" role="form">
+                        <form action="cari_post.php" method="get" role="form">
                           <div class="input-group input-group-outline mb-3">
                               <label class="form-label">Masukkan NISN</label>
                               <input type="text" name="nisn" class="form-control">
                           </div>
                           <div class="text-center">
-                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>  
+                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>
                           </div>
                           </form>
                       </div>

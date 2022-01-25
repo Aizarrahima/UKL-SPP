@@ -8,6 +8,7 @@
         $no_tlp = $_POST['no_tlp'];
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $level = 'siswa';
 
         if(empty($nisn)) {
             echo "<script>alert('nisn tidak boleh kosong'); location.href='add_siswa.php';</script>";
@@ -27,7 +28,7 @@
             echo "<script>('password tidak boleh kosong'); location.href='add_siswa.php';</script>";
         } else {
             include "../../../conn.php";
-            $insert = mysqli_query($conn, "insert into siswa (nisn, nis, nama, id_kelas, alamat, no_tlp, username, password) value ('".$nisn."','".$nis."', '".$nama."', '".$id_kelas."', '".$alamat."', '".$no_tlp."', '".$username."', '".md5($password)."')") or die(mysqli_error($conn));
+            $insert = mysqli_query($conn, "insert into siswa (nisn, nis, nama, id_kelas, alamat, no_tlp, username, password, level) value ('".$nisn."','".$nis."', '".$nama."', '".$id_kelas."', '".$alamat."', '".$no_tlp."', '".$username."', '".md5($password)."', '".$level."')") or die(mysqli_error($conn));
 
             if($insert) {
                 echo "<script>alert('sukses menambahkan siswa'); location.href='siswa.php';</script>";

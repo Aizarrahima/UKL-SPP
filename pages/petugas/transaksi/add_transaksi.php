@@ -18,34 +18,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../../assets/img/favicon.png">
   <title>
     Aplikasi Pembayaran SPP
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
-  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="../../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+  <link id="pagestyle" href="../../../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
 <body class="">
 
-  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="../../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+  <link id="pagestyle" href="../../../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -74,7 +74,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../siswa/siswa.php">
+                  <a class="nav-link me-2" href="../admin/siswa/siswa.php">
                     <i class="fa fa-user opacity-6 text-dark me-1"></i>
                     Data Siswa
                   </a>
@@ -91,64 +91,29 @@
               <div class="container">
                 <div class="row">
                   <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-                    <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
+                    <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../../../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
                     </div>
                   </div>
                   <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                     <div class="card card-plain">
                       <div class="card-header">
-                        <h4 class="font-weight-bolder">History</h4>
+                        <h4 class="font-weight-bolder">Transaksi</h4>
                         <p class="mb-0">Masukkan NISN yang akan dicari</p>
                       </div>
                       <?php 
-                      include "../../conn.php";
+                      include "../../../conn.php";
                       ?>
 
                       <div class="card-body mb-8">
-                        <form action="" method="get" role="form">
+                        <form action="add_transaksi_post.php" method="get" role="form">
                           <div class="input-group input-group-outline mb-3">
                               <label class="form-label">Masukkan NISN</label>
                               <input type="text" name="nisn" class="form-control">
                           </div>
                           <div class="text-center">
-                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>
-                            
+                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>  
                           </div>
                           </form>
-                          <?php 
-                            include "../../conn.php";
-                            session_start();
-                            if (isset($_GET['nisn']) && $_GET['nisn'] != '') {
-                                $data = $conn->query("SELECT * FROM kelas join siswa WHERE nisn = '".$_GET['nisn']."'");
-                                $dta = mysqli_fetch_assoc($data);
-
-                                $siswa = $conn->query("SELECT * FROM siswa WHERE nisn = '".$_GET['nisn']."' join kelas");
-                                $dt_siswa = mysqli_fetch_assoc($siswa);
-                            ?>
-
-                            <div class="row">
-                                <div class="col-md-7 mt-4">
-                                    <div class="card">
-                                        <div class="card-header pb-0 px-3">
-                                        <h6 class="mb-0">Biodata</h6>
-                                        </div>
-                                        <div class="card-body pt-4 p-3">
-                                        <ul class="list-group">
-                                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                            <div class="d-flex flex-column">
-                                                <h6 class="mb-3 text-sm"><?=$dt_siswa['nama']?></h6>
-                                                <span class="mb-2 text-xs">Nama Kelas: <span class="text-dark font-weight-bold ms-sm-2"><?=$dt_siswa['kelas']?></span></span>
-                                                <span class="mb-2 text-xs">NISN : <span class="text-dark ms-sm-2 font-weight-bold"><?=$dt_siswa['nisn']?></span></span>
-                                                <span class="text-xs">Alamat : <span class="text-dark ms-sm-2 font-weight-bold"><?=$dt_siswa['alamat']?></span></span>
-                                            </div>
-                                        </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php 
-                            }
-                            ?>
-
                       </div>
                     </div>
                   </div>
@@ -158,10 +123,10 @@
           </section>
         </main>
   <!--   Core JS Files   -->
-  <script src="../../assets/js/core/popper.min.js"></script>
-  <script src="../../assets/js/core/bootstrap.min.js"></script>
-  <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../../../assets/js/core/popper.min.js"></script>
+  <script src="../../../assets/js/core/bootstrap.min.js"></script>
+  <script src="../../../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../../../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -174,7 +139,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  <script src="../../../assets/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>
 
 </html>

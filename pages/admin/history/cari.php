@@ -97,7 +97,7 @@
                   <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                     <div class="card card-plain">
                       <div class="card-header">
-                        <h4 class="font-weight-bolder">Transaksi</h4>
+                        <h4 class="font-weight-bolder">History</h4>
                         <p class="mb-0">Masukkan NISN yang akan dicari</p>
                       </div>
                       <?php 
@@ -105,13 +105,13 @@
                       ?>
 
                       <div class="card-body mb-8">
-                        <form action="add_transaksi_post.php" method="get" role="form">
+                        <form action="cari_post.php" method="get" role="form">
                           <div class="input-group input-group-outline mb-3">
                               <label class="form-label">Masukkan NISN</label>
                               <input type="text" name="nisn" class="form-control">
                           </div>
                           <div class="text-center">
-                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>  
+                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Cari</button>
                           </div>
                           </form>
                       </div>

@@ -18,89 +18,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
   <title>
-    Material Dashboard 2 by Creative Tim
+    Aplikasi Pembayaran SPP
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+  <link id="pagestyle" href="../../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
+  <?php 
+  session_start();
+  ?>
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-        <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
+        <img src="../../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Dashboard Siswa</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/dashboard.php">
+          <a class="nav-link text-white " href="../siswa/dashboard-siswa.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="../pages/tables.php">
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white " href="../admin/petugas/petugas.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="material-icons opacity-10">people</i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Petugas</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/billing.php">
+          <a class="nav-link text-white " href="../admin/kelas/kelas.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
+              <i class="material-icons opacity-10">class</i>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Kelas</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/virtual-reality.php">
+          <a class="nav-link text-white " href="../admin/siswa/siswa.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">view_in_ar</i>
+              <i class="material-icons opacity-10">person</i>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Siswa</span>
+          </a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white " href="../siswa/spp/spp.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">payment</i>
+            </div>
+            <span class="nav-link-text ms-1">SPP</span>
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link text-white " href="kurang_bayar.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">payment</i>
+            </div>
+            <span class="nav-link-text ms-1">Kurang Bayar</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/rtl.php">
+          <a class="nav-link text-white active bg-gradient-primary" href="history.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
+              <i class="material-icons opacity-10">history</i>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/notifications.php">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">notifications</i>
-            </div>
-            <span class="nav-link-text ms-1">Notifications</span>
+            <span class="nav-link-text ms-1">History</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/profile.php">
+          <a class="nav-link text-white " href="../../profile.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -108,7 +119,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.php">
+          <a class="nav-link text-white " href="../../sign-in.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">login</i>
             </div>
@@ -116,11 +127,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-up.php">
+          <a class="nav-link text-white " href="../logout.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
+              <i class="material-icons opacity-10">logout</i>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Log Out</span>
           </a>
         </li>
       </ul>
@@ -138,9 +149,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Laporan Pembayaran</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">History</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Laporan Pembayaran</h6>
+          <h6 class="font-weight-bolder mb-0">History</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -179,7 +190,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        <img src="../../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -197,7 +208,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        <img src="../../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -247,82 +258,87 @@
         </div>
       </div>
     </nav>
+
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+      
+      <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Laporan Pembayaran SPP </h6>
-              </div>
+                <h6 class="text-white text-capitalize ps-3">History</h6>
+              </div> 
             </div>
-            <?php include "../conn.php";
-            
-            $qry_siswa = mysqli_query($conn, "select * from siswa join kelas on kelas.id_kelas=siswa.id_kelas");
-
-            $no = 0;
-            while ($data_siswa = mysqli_fetch_array($qry_siswa)) {
-                $no++; 
-            ?>
-            <div class="card-body pt-4 p-3">
-            <ul class="list-group">
-              <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                <div class="d-flex flex-column">
-                  <h6 class="mb-3 text-sm"><?=$data_siswa['nama']?></h6>
-                  <span class="mb-2 text-xs">NISN : <span class="text-dark font-weight-bold ms-sm-2"><?=$data_siswa['nisn']?></span></span>
-                  <span class="mb-2 text-xs">Jurusan : <span class="text-dark ms-sm-2 font-weight-bold"><?=$data_siswa['jurusan']?></span></span>
-                  <span class="text-xs">Angkatan : <span class="text-dark ms-sm-2 font-weight-bold"><?=$data_siswa['angkatan']?></span></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-            <!-- <div class="card-body px-0 pb-2">
+            <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nisn</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nis</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Siswa</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Kelas</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nomor HP</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Pembayaran</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NISN</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Bayar</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bulan</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tahun</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nominal</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Keterangan</th>
+                      <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th> -->
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    
+                    <?php include "../../conn.php";
+
+                    $qry = mysqli_query($conn, "select * from siswa where username = '".$_SESSION['username']."'");
+                    $dt_siswa = mysqli_fetch_array($qry);
+                    $nisn = $dt_siswa['nisn'];
+
+
+                      $qry_transaksi = mysqli_query($conn, "select * from siswa join spp join pembayaran on pembayaran.nisn=siswa.nisn where siswa.nisn = '$nisn' and tgl_bayar is not null");
+                      while ($data_transaksi = mysqli_fetch_array($qry_transaksi)) {
+                      //keterangan
+                      if($data_transaksi['tgl_bayar'] != null) {
+                        $ket_lunas = "<label class='text-white'>Lunas<br></label>";
+                        $button_lunas = "";
+                      } else {
+                        $ket_lunas = "<label class='text-white'>Belum Lunas</label>";
+                        $button_lunas = "<a href='lunas.php?id_pembayaran=".$data_transaksi['id_pembayaran']."' class='btn btn-dark' onclick='return confirm(\"apakah anda yakin?\")'>Bayar</a>";
+                      }
+                      ?>
                       <tr>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['nisn']?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['id_pembayaran']?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['nis']?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['nisn']?></span>
+                      </td
+                      ><td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['nama']?></span>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['nama']?></span>
+                        <span class="badge badge-sm bg-gradient-success"><?=$data_transaksi['tgl_bayar']?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['nama_kelas']?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['bulan_spp']?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['alamat']?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['tahun_spp']?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['no_tlp']?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$data_transaksi['nominal']?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$data_siswa['username']?></span>
+                        <a class="btn btn-link text-danger text-gradient px-3 mb-0"><?=$ket_lunas?></a>
                       </td>
+                      <!-- <td class="align-middle text-center"><?=$button_lunas?></td> -->
                       <?php 
                       }
                       ?>
                   </tbody>
                 </table>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -435,10 +451,10 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../../assets/js/core/popper.min.js"></script>
+  <script src="../../assets/js/core/bootstrap.min.js"></script>
+  <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -451,7 +467,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  <script src="../../assets/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>
 
 </html>

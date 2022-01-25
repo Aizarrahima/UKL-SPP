@@ -19,6 +19,7 @@
                     $_SESSION['username'] = $dt_login['username'];
                     $_SESSION['password'] = $dt_login['password'];
                     $_SESSION['id_petugas'] = $dt_login['id_petugas'];
+                    $_SESSION['nama_petugas'] = $dt_login['nama_petugas'];
                     $_SESSION['status_login'] = true;
                     $_SESSION['level'] = "admin";
                     echo "<script>alert('Success login as Admin'); location.href='admin/dashboard-admin.php';</script>";
@@ -27,6 +28,7 @@
                     $_SESSION['username'] = $dt_login['username'];
                     $_SESSION['password'] = $dt_login['password'];
                     $_SESSION['id_petugas'] = $dt_login['id_petugas'];
+                    $_SESSION['nama_petugas'] = $dt_login['nama_petugas'];
                     $_SESSION['status_login'] = true;
                     $_SESSION['level'] = "petugas";
                     echo "<script>alert('Success login as Petugas'); location.href='petugas/dashboard-petugas.php';</script>";
@@ -36,6 +38,8 @@
                 session_start();
                 $_SESSION['username'] = $dt_login['username'];
                 $_SESSION['password'] = $dt_login['password'];
+                $_SESSION['nama'] = $dt_login['nama'];
+                $_SESSION['level'] = "siswa";
                 $_SESSION['status_login'] = true;
                 echo "<script>alert('Succes login as Siswa'); location.href='siswa/dashboard-siswa.php';</script>";
             } else {

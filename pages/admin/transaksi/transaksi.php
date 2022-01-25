@@ -97,7 +97,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../../history/history.php">
+          <a class="nav-link text-white" href="../history/history.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">history</i>
             </div>
@@ -296,7 +296,7 @@
                       //keterangan
                       if($data_transaksi['tgl_bayar'] != null) {
                         $ket_lunas = "<label class='text-white'>Lunas <br></label>";
-                        $button_lunas = "<a href='cetak.php?id_pembayaran=".$data_transaksi['id_pembayaran']."' class='btn btn-dark' onclick='return confirm(\"apakah anda yakin?\")'>Cetak</a>";
+                        $button_lunas = "<a href='cetak.php?id_pembayaran=$data_transaksi[id_pembayaran]&nisn=$data_transaksi[nisn]' class='btn btn-dark' onclick='return confirm(\"apakah anda yakin?\")'>Cetak</a>";
                       } else {
                         $ket_lunas = "<label class='text-white'>Belum Lunas</label>";
                         $button_lunas = "<a href='lunas.php?id_pembayaran=".$data_transaksi['id_pembayaran']."' class='btn btn-dark' onclick='return confirm(\"apakah anda yakin?\")'>Bayar</a>";
@@ -339,7 +339,7 @@
         </div>
       </div>
 
-      <!-- <footer class="footer py-4  ">
+      <footer class="footer py-4  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -370,7 +370,7 @@
             </div>
           </div>
         </div>
-      </footer> -->
+      </footer>
 
     </div>
   </main>
